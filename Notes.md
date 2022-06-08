@@ -1,0 +1,1 @@
+We have a server which is a computer connected to the internet. Our browser makes a request to the server and the server sends all reuqired files back (response) to the browser requesting. Generally this will be HTML, CSS and JavaScript files. The browser will then look at these and render the website in the browser.
