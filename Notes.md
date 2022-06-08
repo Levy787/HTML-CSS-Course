@@ -11,3 +11,22 @@ Javascript is used to help manage state and manipulate the info displayed. (Verb
 ---
 
 Index is the first page of any website, its the entry point to any website.
+
+---
+
+<h2>--- HTML Fundamentals ---<h2>
+
+<h3>Basics<h3>
+
+HTML - Hyper Text Markup Language
+
+     v content    v closing tag
+
+<p>paragraph tag</p>  <- Element
+ ^Opening tag
+
+Some tags dont have content in which case we can ommit the closing tag
+v To self close we place a "/" at the end
+<img rec="abc.jpeg" />
+
+<h3>HTML structure</h3>
