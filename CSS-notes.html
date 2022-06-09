@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<hmtl lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CSS Notes</title>
+  </head>
+  <body>
+    <h1>CSS Notes</h1>
+    <h2>General</h2>
+    <p>
+      We use CSS to style the HTML CSS consists of properties which we then
+      change to alter the style
+    </p>
+    <p>v Selector</p>
+    <p>
+      h1 { <br />
+      &emsp;color: blue; <- Declertation/style <br />
+      &emsp;text-align: center; <br />
+      &emsp;font-size: 20px; <br />}
+    </p>
+    <p>v Property</p>
+    <p>font-size: 20px; <- value</p>
+    <p><br />We can insert CSS comments with */ comment here /*.</p>
+    <h2>Common ways of writing CSS</h2>
+    <ol>
+      <li>In-line CSS</li>
+      <li>Internal CSS</li>
+      <li>external CSS</li>
+    </ol>
+    <h3>In-line CSS</h3>
+    <p>
+      To style html inline, we simply use the style attribute on any of our html
+      tags e.g., <br />&lt;h1 style="color:blue"&gt;heading is now
+      blue&lt;/h1&gt;
+    </p>
+    <p>In line styles should <strong>never</strong> be used!<strong</p>
+    <h2>Internal CSS</h2>
+    <p>
+      To use internal styling, we add a style tag within the head tag e.g.,<br />&lt;head&gt;<br />&emsp;&lt;style&gt<br />&emsp;&emsp;color:
+      blue;<br />&emsp;&lt;/style&gt;<br />&lt;/head&gt;
+    </p>
+    <p>
+      This will then apply a blue color to all h1 tags within our html. This
+      approach seperates our concernes a bit and is a reccommened approach over
+      In-line CSS but still not the best.
+    </p>
+    <h2>External CSS</h2>
+    <p>
+      The preffered approach is to create an external style sheet. We do this by
+      creating a new file called say style.css.
+    </p>
+    <p>
+      Once we have created our stylesheet, we then need to link the css file to
+      our html doc, we do this in the head tag. We do this with a link tag.
+    </p>
+    <p>
+      &lt;head&gt;<br />&emsp;&lt;link href="./style.css" rel="stylesheet"
+      /&gt;<br />&lt;/head&gt;
+    </p>
+    <p>Now this style sheet will be applied to our html document.</p>
+    <h2>CSS properties</h2>
+    <p>
+      We always have a selector which determines where to apply the style e.g.,
+      if we have h1 {...} this will select all h1 tags and apply this styling to
+      them.
+    </p>
+    <p>Some other properties we can apply are</p>
+    <ul>
+      <li>font-size: 26px; &larr;Sets the font size to 26px</li>
+      <li>font-family: sans-serif; &larr;Sets the font family</li>
+      <li>
+        text-transform: uppercase; &larr;Allows us to transform the text in
+        certain ways such as uppercase.
+      </li>
+      <li>
+        font-style: italic; &larr;Sets the font to italic, we could also say
+        bold etc.
+      </li>
+    </ul>
+    <p>
+      There is also a line height property which specifies the line height in
+      relation to the size of the text, 1 = same size as text, 1.5 = 150% of
+      text height.
+    </p>
+    <p>
+      The strong, em and a tags all inherit from a p tag which means that when
+      we apply styling to a p tag, it will automatically be applied to the given
+      tags, it will not override the html functionality however, e.g., a strong
+      tag will always remain strong regardless of CSS.
+    </p>
+    <p>
+      Another CSS property is the text align which aligns the text on the
+      vertical axis, e.g., left, center right. We would say<br />&emsp;text-align:
+      centre;
+    </p>
+    <h3>Combining selectors</h3>
+    <p>
+      We have just applied font-family to the h1, h2, h3, h4, p and li tags. We
+      can do this in a much better way, we do this by selecting many elements at
+      once.
+    </p>
+    <p>h1, h2, h3, h4, p, li {<br />&emsp;font-family: sans-serif;<br />}</p>
+    <p>This is called a list selector and selects all instances of the list.</p>
+    <h4>Descendent selector</h4>
+    <p>
+      We can sytle an element which is within another element e.g.,<br />&lt;footer&gt;<br />&emsp;&lt;p&gt;This
+      will be styled&lt;/p&gt;<br />&lt;/footer&gt;
+    </p>
+    <p>The above will be styled below.</p>
+    <p>footer p {<br />&emsp;font-size: 16px;<br />}</p>
+    <p>
+      So all p tags who are children of footer tags will be styled accordingly.
+      This is not overly robust as its dependent on the html structure. This is
+      not scalable.
+    </p>
+    <h4>Using Classes and ID for styling</h4>
+    <p>
+      We can set the id attribute to html tags then set styles based on that.
+      e.g.,
+    </p>
+    <p>&lt;p id="author"&gt;James Jenkins&lt;/p&gt;</p>
+    <p>We then select id's in CSS by using the # symbol e.g.,</p>
+    <p>#author {<br />&emsp;font-style: italic;<br />}</p>
+    <p>The '#' select id's, the '.' selects classes.</p>
+    <h4>Classes vs Id's</h4>
+    <p>
+      The main difference between a class and an Id is that we cannot repeat an
+      id, e.g., if we have an id of 'copywrite', we can only have one of those,
+      if that were say a class, we could have many of them.
+    </p>
+    <p>Setting class can be done like below.</p>
+    <p>
+      .related-author {<br />&emsp;font-size: 18px;<br />&emsp;font-weight:
+      bold;<br />}
+    </p>
+    <p>
+      Generally in the real world, we never use id's, we only use classes as
+      this allows us to scale the page easily.
+    </p>
+    <p>
+      Something to note is that currently, some of out p tags are being selected
+      up to three times. We will revisit this later.
+    </p>
+    <h2>Colors</h2>
+    <p>
+      In CSS there are a ref diferent ways we can represent colors, the two main
+      methods are rgb or hex.
+    </p>
+    <p>
+      To use rgb notation we use say rgb(0, 255, 255), we can also use reba
+      which allows us to specify the transperency of color, 0 fully transparent,
+      1 fully opaque. rgba(0, 255, 255, 0.3)
+    </p>
+    <p>
+      to use hex colors we just specify #xxxxxx, rgb in hexidecimal #00ffff this
+      is the same as rgb(0, 255, 255).
+    </p>
+    <p>
+      When we have all the numbers exactly the same we get a black, white or
+      gray color.
+    </p>
+    <p>We specify the color of an element using the color property. e.g.,</p>
+    <p>h1 {<br />&emsp;color: #1098AD;<br />}</p>
+    <h2>Borders</h2>
+    <p>
+      Borders are another property which we can style with CSS, it is called a
+      short hand property as we can define many things at once. Generally it
+      goes border: &lt;width&gt; &lt;line fill&gt; &lt;color&gt;
+    </p>
+    <p>
+      So border: 5px, solid, #1098AD; Would create a 5px solid border of color
+      #1098AD. Other styles we can use are dotted, dashed etc.,
+    </p>
+    <p>
+      There are special variants such as border-top or border-bottom which will
+      just style the top or bottom.
+    </p>
+  </body>
+</hmtl>
