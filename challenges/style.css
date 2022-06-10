@@ -47,6 +47,22 @@ a:active {
   border: 5px solid black;
 }
 
+.rel {
+  position: relative;
+}
+
+.bl-bdr::before {
+  content: "SALE";
+  position: absolute;
+  background-color: rgb(203, 40, 40);
+  color: white;
+  padding: 5px 15px;
+  font-size: 16px;
+  top: -15px;
+  left: -25px;
+  letter-spacing: 5px;
+}
+
 .shipping {
   color: #777;
   font-size: 12px;
@@ -81,4 +97,43 @@ a:active {
 .content {
   width: 825px;
   margin: 50px auto;
+}
+
+.color-selector {
+  height: 50px;
+  margin: auto auto;
+}
+
+.color {
+  height: 20px;
+  width: 20px;
+  margin: 20px 0;
+  margin-right: 20px;
+  vertical-align: middle;
+  display: inline-block;
+  border: 2px solid black;
+}
+
+.color.black {
+  background-color: black;
+}
+
+.color.blue {
+  background-color: blue;
+}
+
+.color.red {
+  background-color: red;
+}
+
+.color.orange {
+  background-color: orange;
+}
+
+.color.green {
+  background-color: green;
+}
+
+.color.brown {
+  background-color: brown;
 }
