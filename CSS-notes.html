@@ -2,6 +2,13 @@
 <hmtl lang="en">
   <head>
     <meta charset="UTF-8" />
+    <style>
+      body {
+        font-family: sans-serif;
+        background-color: black;
+        color: greenyellow;
+      }
+    </style>
     <title>CSS Notes</title>
   </head>
   <body>
@@ -174,6 +181,197 @@
     <p>
       There are special variants such as border-top or border-bottom which will
       just style the top or bottom.
+    </p>
+    <h2>Pseudo Code</h2>
+    <p>
+      If we wanted to select the first element of a list to make it bold, the
+      way we would go about it now is to hand the first element a class of say
+      'first-element', we would then write some CSS to select that class and
+      make it bold. A much better way of doing this is to use CSS pseudo
+      classes. This means we can select an element then put a colon and select
+      other things specific things in relation to that. For example we could
+      choose li:first-child which will get the first child from a list and style
+      it. To make the first child bold we would say
+    </p>
+    <p>li:first-child{<br />&emsp;font-weight: bold;<br />}</p>
+
+    <p>
+      <br />Some other examples are li:last-child{...}, li:nth-child(2){...} <-
+      This one selects the second list element and styles it.
+      <br />li:nth-child(odd) {...} <- styles every odd element. This one can be
+      very good for styling tables which have alternating colors.
+    </p>
+    <p>
+      <br />Based on what we have just learned, we would expect that we can now
+      select the first p tag within our article using a pseudo class as follows
+      <br />&emsp;article p:first-child{...}
+    </p>
+    <p>
+      However we will find this will not work, as first child will try to select
+      the first child in the article tag, which in our case is the header tag.
+      This would work if we had a paragraph as the first child under our article
+      tag. Hencem pseudo classes dont work well for random classes within
+      classes, but it works really well for things like lists and tables, this
+      is because all children are often the same.
+    </p>
+    <h3>Styling anchors</h3>
+    <p>
+      We may try to style an anchor using a {...}, this is bad practce though as
+      we can no longer style it based on it's state. A better practice is to us
+      anchor pseudo classes.
+    </p>
+    <p>
+      So we may style them like below<br />a:link {<br />&emsp;color: #1095ad<br />}<br />This
+      will ensure only a tags with links will by styled as opposed to all a tags
+      regardless of whether it has a href or not.
+    </p>
+    <p>
+      We also have a visited pseudo class for visited links, we generally set
+      this the same as the normal unvisited link and group them together.
+    </p>
+    <p>
+      A very useful pesudo class is the a:hover{...}, this will change the
+      styling of the html whenever we hover over the link.
+    </p>
+    <p>
+      We also have a:active which is the styling for when we are clicking on the
+      a tag.
+    </p>
+    <p>
+      We should always add anchor styling in this order, link, visited, hover,
+      active.
+    </p>
+    <h2>Conflicting selectors</h2>
+    <p>Imagine we have the below.</p>
+    <p>
+      .author {<br />&emsp;font-style: italic;<br />&emsp;font-size: 18px;<br />}<br /><br />#author-text
+      {<br />&emsp;font-size: 20px;<br />}<br /><br />p, li {<br />&emsp;font-family:
+      sans-serif;<br />&emsp;color: #444;<br />&emsp;font-size:22px<br />}<br /><br /><br />&lt;
+      p id="author-text" class="author"&gt;<br />&emsp;Posted by Laura Jones on
+      Monsay, June 21st 2027<br />&lt;/p&gt;<br />
+    </p>
+    <p>
+      The html is being selected three times by CSS, which styling does it use?
+      The answer is all of them.
+    </p>
+    <p>The main issue is that there is conflicting font size decorations.</p>
+    <p>
+      CSS has a list of priorities, the basic list is ID, class or pseudo class,
+      general tags. So if we have a font size set for the tag of 19px and a font
+      size set for the ID of 25px, the font will be 25px as the ID selector has
+      higher priority than the tag selector.
+    </p>
+    <p>
+      If we have say two conflicting id selectors, its the last style in the
+      document which will be used.
+    </p>
+    <p>There is also a universal selector '*' but more on this later.</p>
+
+    <p>
+      So in the above example, the CSS applied would be
+      <br />{<br />&emsp;font-size: 20px;<br />&emsp;font-style: italic;<br />&emsp;font-family:
+      sans-serif;<br />&emsp;color: #444l<br />}
+    </p>
+    <p>
+      In line styles have a higher priority than ID selectors and important
+      styles (marked with a '!') have priority over all others.
+    </p>
+    <ol>
+      <li>Important styles (!)</li>
+      <li>Inline styles</li>
+      <li>ID selector (#)</li>
+      <li>Class Selector (.)</li>
+      <li>Element selector</li>
+      <li>Universal selector (*)</li>
+    </ol>
+    <br />
+    <p>
+      We can make a CSS style important as below.<br /><br />footer p {<br />&emsp;color:
+      green !important;<br />}
+    </p>
+    <h2>Inheritance and the universal selector</h2>
+    <p>
+      Inheritance comes from parent and children, for example we have a body tag
+      as the parent then eveything inside that body tag is a child tag and
+      inherits styles from it. For example, if we set the body tag to have a
+      color of red, all tags within that body tag will be given a color of red,
+      this is easily overridden however. It's almost like a base style for our
+      page to fall back on.
+    </p>
+    <p>
+      There are a lot of styles which dont get passed down, one of these include
+      the border, for example, if we set the body tag with a border-top: 10px
+      solid #1095ad, that style will only be applied to the body tag and will
+      not be passed down.
+    </p>
+    <p>The properties which do get inherited are:</p>
+    <ul>
+      <li>font-family</li>
+      <li>font-size</li>
+      <li>font-weight</li>
+      <li>font-style</li>
+      <li>color</li>
+      <li>line-height</li>
+      <li>letter-spacing</li>
+      <li>text-align</li>
+      <li>text-transformation</li>
+      <li>text-shadow</li>
+      <li>line-style</li>
+      <li>Others</li>
+    </ul>
+    <p>
+      If we would like everything to get selected, we could use the universal
+      selector e.g., * {...}, we could then give it a property of say
+      border-top: 10px solid white and it will give every element in out html a
+      top border.
+    </p>
+    <h2>The Box Model</h2>
+    <p>
+      The box model is used in CSS and basically everything that is on a webpage
+      is in a box with a given width and height. Around that content we have
+      padding, then a border then margin. We can add any of these to a tag by
+      specifying say padding-top, margin-bottom etc. A short hand way to add
+      them is to just say padding: 10px 20px; the first number will be applied
+      to the top and bottom, the second number will be applied to either side.
+    </p>
+    <h3>Collaping margins</h3>
+    <p>Say we have the below...</p>
+    <p>
+      &lt;p class="e1"&gt;Element 1&lt;/p&gt;<br />&lt;p class="e2"&gt;Element
+      2&lt;/p&gt;<br /><br />.e1 {<br />&emsp;margin-bottom: 50px;&emsp;}<br /><br />.e2
+      {<br />&emsp;margin-top: 60px;<br />}
+    </p>
+    <p>
+      We may assume that we would add both margins together and get a 110px gap
+      between the two elements. This is not the case, if we have two margins
+      which are next to each other, CSS will select the larger of the two and
+      just use that as spacing between the two items.
+    </p>
+    <h2>Dimentions</h2>
+    <p>
+      We can easily set the dimentions of elements usign the width and height
+      properties. We never want to do this in HTML but rather in CSS. When we
+      set one the other will be automatically assigned to keep the aspect
+      ration. We can force a certain aspect ratio by setting both height and
+      width.
+    </p>
+    <p>
+      We dont always have to use px to set the width and height, we can also use
+      %, if we say 100% the element will take up the entire content area of the
+      parent. So if we had an image and set the width to 100% it would stretch
+      across the enitre width of the page keeping a consistent aspect ration.
+      This allows us to begin creating a responsive web page.
+    </p>
+    <h2>Alignment and Centre</h2>
+    <p>
+      It is currently quite difficult to centre all the content on the page but
+      there is a simple trick we can use to do so. First we wrap out entire
+      content in a div tag, this is simply a tag which groups things together
+      but has not semantic meaning. We then apply a class called content. We
+      then style this content to have a width of say 700px and then have margin
+      left and right to be automatic. This will keep all the content of the page
+      at a max width of 700px then apply an automatic margin either side of the
+      contet to keep the 700px contianer centred.
     </p>
   </body>
 </hmtl>
