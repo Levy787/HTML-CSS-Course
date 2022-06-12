@@ -175,3 +175,34 @@ footer p {
   width: 800px;
   margin: 0 auto;
 }
+
+/*Floats*/
+.author-img {
+  float: left;
+  margin-bottom: 20px;
+}
+
+.author {
+  float: left;
+  margin-top: 10px;
+  margin-left: 20px;
+  /* padding-left: 80px; */
+}
+
+h1 {
+  float: left;
+}
+
+nav {
+  float: right;
+}
+
+.clear {
+  clear: both;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: block;
+}
