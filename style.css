@@ -27,17 +27,12 @@ body {
   padding-left: 40px;
   padding-right: 40px; */
   padding: 20px 40px;
-  margin-bottom: 60px;
   /* height: 80px; */
 }
 
 nav {
   font-size: 18px;
   /* text-align: center; */
-}
-
-article {
-  margin-bottom: 60px;
 }
 
 .post-header {
@@ -347,7 +342,8 @@ footer {
   font-style: italic;
 }
 
-.row {
+/* FLEX BOX LAYOUT */
+/* .row {
   display: flex;
   gap: 75px;
   margin-bottom: 60px;
@@ -361,4 +357,27 @@ aside {
 article {
   flex: 1;
   margin-bottom: 0;
+} */
+
+/* CSS GRID LAYOUT */
+.container {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  column-gap: 75px;
+  row-gap: 60px;
+  align-items: start;
+}
+
+.main-header {
+  grid-column: 1 / -1;
+}
+
+article {
+}
+
+header {
+}
+
+footer {
+  grid-column: 1 / -1;
 }

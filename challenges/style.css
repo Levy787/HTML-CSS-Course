@@ -6,11 +6,6 @@
   box-sizing: border-box;
 }
 
-p,
-a {
-  margin-bottom: 10px;
-}
-
 li {
   margin-left: 20px;
   margin-bottom: 10px;
@@ -30,7 +25,6 @@ ul {
 .price {
   font-size: 20px;
   font-weight: bold;
-  float: left;
 }
 
 a:link,
@@ -69,8 +63,6 @@ a:active {
   color: #777;
   font-size: 12px;
   text-transform: uppercase;
-  margin-bottom: 30px;
-  float: right;
 }
 
 .product-title {
@@ -98,23 +90,15 @@ a:active {
 }
 
 .content {
-  width: 900px;
+  width: 825px;
   margin: 50px auto;
-}
-
-.color-selector {
-  height: 50px;
-  margin: auto auto;
 }
 
 .color {
   height: 20px;
   width: 20px;
   margin: 20px 0;
-  margin-right: 20px;
   vertical-align: middle;
-  display: inline-block;
-  border: 2px solid black;
 }
 
 .color.black {
@@ -141,24 +125,55 @@ a:active {
   background-color: brown;
 }
 
-.col-1 {
-  float: left;
-  width: 300px;
-  height: auto;
+/* .row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
 }
 
-.col-2 {
-  float: left;
-  padding: 0 5px;
-  width: 290px;
+.price-shipping {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
-.col-3 {
-  float: left;
-  padding: 0 5px;
-  width: 290px;
+.col {
+  flex: 1;
 }
 
-.clearfix {
-  clear: both;
+*/
+
+.price-shipping {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.color-selector {
+  display: flex;
+  gap: 10px;
+}
+
+article {
+  display: grid;
+  grid-template-columns: auto 1fr 1fr;
+  column-gap: 30px;
+  align-items: top;
+}
+
+.product-title {
+  grid-column: 1 / -1;
+  grid-row: 1;
+}
+
+.item-img {
+  grid-row: 2;
+}
+
+.add-to-cart {
+  grid-row: 3;
+  grid-column: 1 / -1;
 }

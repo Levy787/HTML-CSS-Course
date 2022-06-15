@@ -136,4 +136,102 @@ Id all the items are to large to fit in the parent container, be default they wi
 
 There is also a property called flex-grow, if set to 1 it will essetnitally make all elements grow until they fit the parent container. We can apply flex-grow to all child elements and set it to 1, we could then apply flex grow to a single element to 2, this will make that element take up twice as much as all other respective elements.
 
+---
+CSS GRID
+
+CSS Grid is used to build 2-D layouts, we divide a container into rows and columns. It allows us to write much less HTML and CSS to get good layouts.
+
+CSS Grid does not replace flex box, rather they work together.
+
+CSS GRID is the most modern way to build web layouts, its also the most complete and probably the easiest.
+
+To get started we set the display property to grid, we then set the grid template.
+
+display: grid;
+grid-template-columns: 250px 150px;
+
+We give the grid-template-columns as many values as we would like, each value will be the exact width of that column. In the above example, we will get two columns the first will be 250px wide and the second will be 150px wide.
+
+Similar to flex box, all elements will stretch to the max element height by default, we can obviously change this.
+
+grid-template-rows: 300px 200px;
+
+The above will make the height of the first row be equal to 300px and the second row 200px. If there is an element with an already defined height, it will keep its defined height, otherwise it'll be stretched.
+
+If we want a gap between items we use the gap property. There is also a row-gap and column-gap.
+
+column-gap: 30px;
+row-gap: 60px;
+
+Generally when using gird we use the fr unit which allows us to create flexible rows and columns. fr stands for fraction. If we have set widths for our columns and would like one column to take up the remaining space, we can jst give it a value of 1fr.
+
+grid-template-columns: 200px 200px 1fr 100px;
+
+If we would like 4 columns all the exact same width, we could give a property of:
+
+grid-template-columns: 1fr 1fr 1fr 1fr;
+
+If we would like to have three columns and the last out to only take up as much space as it needs we can give it a width of auto.
+
+grid-template-columns: 1fr 1fr 1fr auto;
+
+Notice how we have 1fr many times in the above examples? There is a much better way of getting around this by using the repeat CSS function.
+
+grid-template-columns: 1fr 1fr 1fr 1fr; == grid-template-columns: repeat(4, 1fr);
+^Explicit                                  ^Implicit
+
+grid-template-columns: 1fr 1fr 1fr auto; == grid-template-columns: repeat(3, 1fr) auto;
+
+We can get a similar effect on rows and row height:
+
+grid-template-rows: 1fr 1fr;
+
+This will find the element with the largest height and set it to 1fr, hence all elements will stretch to be the same height as the largest item, irrespective of what row it is on.
+
+we could create a height for the container and all elements will stretch to take up the free space.
+
+We can place children where would would like by setting their grid-column and grid-row.
+
+.el--8 {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+
+As this is only taking up one space, we can change this to 
+
+.el--8 {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+In the above, the child with class el--8 will be placed in column 2, row 1. It will take up 1 grid space. Alternatively, we could make it take up two columns..
+
+.el--8 {
+    grid-column: 2 / 4;
+    grid-row: 1 / 2;
+}
+
+We can also shorten this by saying how many cells we would like to span.
+
+.el--8 {
+    grid-column: 2 / span 2;
+    grid-row: 1 / 2;
+}
+
+If we would like an element to span the rest of the row or column there is a nice trick we can use.
+
+.el--2 {
+    grid-column: 1 /-1;
+    grid-row: 2;
+}
+
+This will place the second element on the second row and span from column 1 to the end of the grid container, that what the -1 does.
+
+We could also use -2 to go to the second last column or row.
+
+We can also overlap items if we would like by using some of the above methods and setting things to sit in the same area.
+
+ALIGNING ITEMS
+
+
 </pre>
