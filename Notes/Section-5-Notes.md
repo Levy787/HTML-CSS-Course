@@ -257,4 +257,211 @@ Do not make icons larger than they need to be, also ensure the lines are not too
 
 To actually use icons, we are best off copying the SVG code and pasting it into our project.
 
+--- SHADOWS ---
+
+Shadows are generally used to help users desifer different elements from each other. They give elements a depth of 3D look.
+
+Shadows can be used on both boxes and/or text.
+
+Generally the more serious a website, the less shadows, the more playful the website, the more shadows we use.
+
+Two general rules
+    1. Use shadows in small doses (don't shadow every item)
+    2. Go light on shadows, don't make them too dark, make it similar to the real world.
+
+---
+When to use shadows
+
+Small shaddows for small elements, elements we want to stand out we can give them shadows.
+
+Medium sized shadows are used to make entire sections or cards to stand out from the rest of the page.
+
+Large shadows are used on popup windows or navigation, it draws almost your entire attention to them.
+
+We can also have shadow for hover events, when we click the shaddow lessens, this is a very common pattern.
+
+We can also experiment with glows which are essentially colored shadows.
+
+We often use text shadow when we have text over an image.
+
+box-shadow: 20px 20px 20px 10px #000;
+
+1. Vertical offset
+2. Horizontal offset
+3. Blur
+4. Scale (optional)
+5. Color
+
+
+--- BORDER RADIUS ---
+
+The border radius is another thing we can use to make a website serious or fun. The larger the radius the more playful the website, the sharper the edges, the more serious/elegant the website.
+
+Generally the typeface will help us determin the amount of border radius we shopuld have, the rounder the typeface the more border radius we should use.
+
+Inter is a reasonably square typeface and hence would only use a small amount of border radius.
+
+Border radius is most commonly used on buttons. Images generally have rounded edges or completely circle. Icons also generally have border radius. Sections often have border radius. All elements can use border radius to help them stand out. 
+
+
+--- WHITESPACE ---
+
+Whitespace is probably the easiset way of making a website look good. They make out website look clean, modern and polished.
+
+Whitespace communicates how elements are related to each other.
+
+---
+How to use hite space
+
+We should use a lot of white space between sections.
+
+We should also use whitespace between groups of elements, not as much as the whitespace we are using between sections however.
+
+We should also consider horizontal whitespace, we generally use vertical whitespace more than horizontal whitespace however.
+
+We should also use whitespace between smaller elements.
+
+Inside of groups of elements, we should try and use whitespace over lines, e.g., in a list of items.
+
+---
+How much white space should be use?
+
+The law of proximity, the closer elements are related, the less whitespace required.
+
+A general guideline is to use too much whitespace and decrease it until it looks good.
+
+We can also aim to match other items elements in our design, the larger the elements on our web page, the larger the whitespace reqired.
+
+We should also have a set of whitespace we can use, generally the below. This helps limit our choices.
+
+[2, 4, 8, 12, 16, 24, 32 ,48, 64, 80, 96, 128]
+
+--- VISUAL HIERCHY ---
+
+Having visual hierachy has a massive impact on web pages.
+
+The is the establishment of which elements are the most important ones.
+
+Once we have this hierchy, we can easily draw attention to the most important items.
+
+This is the path the users eyes follow as they look at a page.
+
+Once we know our hierachy, we use a combonation of the below to lead the user where we would like to take them.
+
+    - Position
+    - Size
+    - Colors
+    - Spacing
+    - Borders
+    - Shadows
+
+---
+Some fundamentals
+
+1. Place most important near the top of the page.
+2. The first call to action button should be near the top of the page.
+3. Images draw a lot of attention so they should be used mindfully. If we want the user to read some text, make the top images small or dont have images near the top of the page.
+4. Also use whitespace strategically, surround important elements with large amounts of whitespace, e.g., google.
+
+---
+Text elements
+
+We use a combonation of 
+    - font size
+    - font weight
+    - color (text or background)
+    - whitespace
+to convey importnace.
+
+The actual elements we should emphasise are 
+    - Titles
+    - Sub-titles
+    - Links
+    - Buttons
+    - Data points
+    - Icons
+
+We can also de-emphasise items such as labels etc.
+
+---
+Componenets
+
+We use a combonation of 
+    - Background color
+    - Shaddow
+    - Border
+    - whitespace
+to convey importnace.
+
+If we have two items and would like one of them to stand out more, generally a prefered approach it to not emphasise that one but rather de-emphases the other one (less is more).
+
+There are a bunch of different elements we can draw attention to
+    - Testimonial
+    - Call to action
+    - Highlight Sections
+    - Preview cards
+    - Forms
+    - Pricing tables
+    - Important rows/columns in tables
+
+
+--- USER EXPERIENCE ---
+
+Its not just what it looks and feels like, deign is how it works.
+
+UI - Look of the page - Beautiful
+UX - How does the app feel - Functional
+
+UI and UX overlap, they are not mutually exclusive, you cannot have one without the other.
+
+UX is defined by the goal of the web page, why are we building the web page, are the users getting the most out of the page.
+
+We can use Sketch and Figma to help design UI/UX.
+
+Things like subscription popups are a bad UX design as it does not allow the use to reach the intended goal of the website.
+
+---
+General guidelines
+
+Don't over complicate websites, keep them simple and familuar. 
+
+Avoid over creativity, generally creativity in web design makes a page worse unless executed perfectly, use etablished patterns. If pages are familiar, users will reach their goal easier.
+
+Always make a call to action to help the user reach their goal.
+
+Use blue and underlined text for links only!!
+
+Animations in a design should be fast, between 200-500ms.
+
+Forms should be easy to scan and aligned, they should also offer a lot of feedback.
+
+Law of locality, place buttons where they will create an effect, e.g., if we have a list and would like to add an item to the end of the list, place the item near the end of the list.
+
+We should use descriptive and key-word focused headlines. keep it relevant and cut out all the fluff. Make content 100% clear.
+
+Keep text simple and laymans.
+
+Breakup long text with sub-headings, images, block quotes and bullet points.
+
+--- WEBSITE PERSONALITIES ---
+ 
+ We choose a website personality and their will help us greatly when choosing other design features. e.g., if we choose a serious, we know we will have little shaddow, little border radius, serif typeface etc.
+
+ Our aim is to limit our design options, this makes development quicker and generally leads to a better result.
+
+
+--- STEALING ---
+
+There are some aggregator websites which help us take other website design and implement it in our own, they are:
+
+    - land-book.com
+    - onepagelove.com
+    - awwwards.com
+    - screenlane.com
+    - dribble.com
+
+e.g., we could go into land-book and look at a bunch of differently designed pages to get some differenet ideas.
+-- OTHER ---
+
+When creating cards, we often use a <figure> tag.
 </pre>
