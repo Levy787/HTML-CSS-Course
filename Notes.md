@@ -1,61 +1,38 @@
 <pre>
-The 7 steps of building a website
+Responsive Web Design
 
-1. Define the project
-    - Who is it for, what is it for, what are the business and user goals.
-    - Who is the target audiance.
+*Create a queries.css file to hold all our media queries
+*Never use pixels in our queries.css file, use em (rem in the queries does not relate to the html font size, it'll rather be equal to 1em or 16px), the browser may have bugs when using rem in media queries so use em.
 
-2. Plan
-    - Gather the content and images for the website.
-    - Plan the site map.
-    - Plan the site sections to convey the content.
-    - Define the personality of the website.
+* rem = root font size
+* em = current font size
 
-3. Sketch
-    - Start thinking about the components and layout patterns.
-    - Use figma or pen and paper.
-    - Iterative process.
-    - Don't sketch everything and dont make it perfect.
+We can create responsive web pages by using the media query within CSS
+We simply say
 
-4. Design and Build
-    - Based on 1, 2 and 3, begin dersigning the website.
+@media (max-width: 600px) {
+    .<class>{
+        <style-property>: <value>;
+    }
+}
 
-5. Test and optimise
-    - Ensure the browser works well in all modern browsers.
-    - Test on mobile devices.
-    - Optimise images, file size and dimentions.
-    - Fix color contrasting issues.
-    - Run lighthouse performance tests.
-    - Think about SEO (Search Engine Optimisation).
+In the above example, when the viewport width becomes less than 600px wide, it will use all the CSS enclosed.
 
-6. Launch
-    - Upload the website to a hosting platform.
-    - Buy a domain name.
+We can have as many media queries as we would like and multiple can be applied at the same time. Conflicting styles will be replaced by the last in the media query
 
-7. Maintain and update
-    - Keep the website content updated overtime.
-    - Install analytics software such as google analytics or dathom.
-    - Keep a blog to keep user updated.
+We set break points based on when our screens begin to break and common ranges of size e.g.
+    Phone - 300-500px
+    Tablet - 600-900px
+    Landscape Tablet - 900-1100px
+    Laptop + Desktop - >1200px 
 
---- RESPONSIVE WEB DESIGN ---
+To ensure our responsive design will work we must ensure the below tag is in our head.
 
-A technique to make the webpage adjust to different screen sizes. The four ingredients to responsive web design are
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-1. Fluid layouts
-    - Allows the webpage to adapt to the current viewport.
-    - Use %, vh or vw
-    - max width instead of width
-2. Responsive Units
-    - Use rem units rather than pixels
-    - Make it easy to scale the entire layout
-    - Set 1rem to 10px
-3. Flexible images
-    - Images do not scale automatically as we change the viewport
-    - Use % and the max width property
-4. Media queries
-    - Change CSS styles depending on viewport width, this is generally done at the end.
+This stops phones from auto zooming out the webpage.
 
-
-The easiest way to make a responsive website is to design first for desktop then move to smaller mobile devices.
-As mobiles have become a lot bigger, people are benginning to create the mobile view first then the desktop view.
+To begin
+1) open up dev tools and select alternate screen sizes.
+2) start at full size and make smaller until the page breaks or doesn't look good.
 </pre>
