@@ -35,4 +35,16 @@ This stops phones from auto zooming out the webpage.
 To begin
 1) open up dev tools and select alternate screen sizes.
 2) start at full size and make smaller until the page breaks or doesn't look good.
+
+----
+
+Not all browsers support all HTML and CSS elements. We can use the website caniuse.com to check what tags and properties we can use on each browser and each version of browser.
+
+To optimise we should also compress images using squoosh.app
+
+We can deploy on netify.
+
+We can also use hover.com or godaddy to purchase a domain name.
+
+We can also connect our forms to netify by using the netify tag in html.
 </pre>
