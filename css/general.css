@@ -101,12 +101,14 @@ Spacing system:
 }
 html {
   font-size: 62.5%;
+  overflow-x: hidden;
 }
 body {
   font-family: "Rubik", sans-serif;
   line-height: 1;
   font-weight: 400;
   color: var(--grey-5);
+  overflow-x: hidden;
 }
 strong {
   font-weight: 500;
