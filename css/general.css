@@ -59,10 +59,18 @@ Spacing system:
   box-sizing: border-box;
   --primary-color: #e67e22;
 
-  --primary-shade-1: #cf711f;
+  --primary-color-a-03: rgba(230, 125, 33, 0.3);
 
+  --primary-shade-1: #cf711f;
+  --primary-shade-7: #45260a;
+  --primary-shade-8: #2e1907;
+
+  --primary-tint-2: #eb984e;
   --primary-tint-8: #fae5d3;
   --primary-tint-9: #fdf2e9;
+
+  --primary-tint-2-a-03: rgba(235, 151, 78, 0.3);
+  --primary-tint-9-a-05: rgba(253, 242, 233, 0.5);
 
   --grey-1: #111;
   --grey-2: #222;
@@ -73,6 +81,7 @@ Spacing system:
   --grey-7: #777;
   --grey-8: #888;
   --grey-9: #999;
+  --grey-a: #aaa;
   --grey-d: #ddd;
 
   --white: #fff;
@@ -82,8 +91,13 @@ Spacing system:
   --tag-lime: #94d82d;
   --tag-yellow: #ffd43b;
 
+  --box-shadow-dark: rgba(0, 0, 0, 0.15);
   --box-shadow-med: rgba(0, 0, 0, 0.075);
   --box-shadow-med-light: rgba(0, 0, 0, 0.06);
+}
+*:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.8rem var(--primary-color-a-03);
 }
 html {
   font-size: 62.5%;
@@ -131,6 +145,7 @@ strong {
   margin-bottom: 1.6rem;
   letter-spacing: 0.75px;
 }
+.btn,
 .btn:link,
 .btn:visited {
   font-size: 2rem;
@@ -140,6 +155,9 @@ strong {
   border-radius: 9px;
   text-decoration: none;
   transition: all 300ms;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
 }
 .btn--full:link,
 .btn--full:visited {
@@ -161,6 +179,16 @@ strong {
   background-color: var(--primary-tint-9);
   box-shadow: inset 0 0 0 3px var(--white);
 }
+.btn-form {
+  background-color: var(--primary-shade-7);
+  color: var(--primary-tint-9);
+  align-self: flex-end;
+  padding: 1.2rem;
+}
+.btn-form:hover {
+  background-color: white;
+  color: var(--grey-5);
+}
 .margin-right-sm {
   margin-right: 1.6rem !important;
 }
@@ -172,6 +200,7 @@ strong {
 }
 .container {
   max-width: 120rem;
+  padding: 0 3.2rem;
   margin: 0 auto;
 }
 .grid {
@@ -193,6 +222,9 @@ strong {
 }
 .grid--4-cols {
   grid-template-columns: repeat(4, 1fr);
+}
+.grid--5-cols {
+  grid-template-columns: repeat(5, 1fr);
 }
 .link:link,
 .link:visited {
@@ -226,4 +258,8 @@ strong {
   width: 3rem;
   height: 3rem;
   color: var(--primary-color);
+}
+.cta *:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.8rem var(--primary-tint-9-a-05);
 }

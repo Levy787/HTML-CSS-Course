@@ -371,3 +371,173 @@
   text-align: center;
   margin-top: 4.8rem;
 }
+.plan-details {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* *********************** */
+/*    FEATURE SECTION      */
+/* *********************** */
+
+.feature {
+}
+.feature-icon {
+  color: var(--primary-color);
+  height: 3.2rem;
+  width: 3.2rem;
+  margin-bottom: 3.2rem;
+  background-color: var(--primary-tint-9);
+  padding: 1.6rem;
+  border-radius: 50%;
+}
+.feature-title {
+  font-size: 2.4rem;
+  color: var(--grey-3);
+  font-family: 700;
+  margin-bottom: 1.6rem;
+}
+.feature-text {
+  font-size: 1.8rem;
+  line-height: 1.8;
+}
+
+/* *********************** */
+/*       CTA SECTION       */
+/* *********************** */
+
+.section-cta {
+  padding: 4.8rem 0 12.8rem 0;
+}
+.cta {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  box-shadow: 0 2.4rem 4.8rem var(--box-shadow-dark);
+  border-radius: 11px;
+  background-image: linear-gradient(
+    to bottom right,
+    var(--primary-color),
+    var(--primary-tint-2)
+  );
+  overflow: hidden;
+}
+.cta-text-box {
+  padding: 4.8rem 6.4rem 6.4rem 6.4rem;
+  color: var(--primary-shade-7);
+}
+.cta-text {
+  font-size: 1.8rem;
+  line-height: 1.8;
+  margin-bottom: 4.8rem;
+}
+
+.cta .heading-secondary {
+  color: var(--primary-shade-7);
+  margin-bottom: 3.2rem;
+}
+.cta-img-box {
+  background-image: linear-gradient(
+      to bottom right,
+      var(--primary-color-a-03),
+      var(--primary-tint-2-a-03)
+    ),
+    url(../img/eating.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.cta-form {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+  column-gap: 3.2rem;
+  row-gap: 2.4rem;
+}
+
+.cta-form label {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-bottom: 1.2rem;
+}
+.cta-form input,
+.cta-form select {
+  width: 100%;
+  padding: 1.2rem;
+  font-size: 1.8rem;
+  font-family: inherit;
+  border: none;
+  background-color: var(--primary-tint-9);
+  border-radius: 9px;
+  box-shadow: 0 1px 2px var(--box-shadow-med);
+  color: inherit;
+}
+
+.cta-form input::placeholder {
+  color: var(--grey-a);
+}
+
+/* *********************** */
+/*     FOOTER SECTION      */
+/* *********************** */
+.footer {
+  padding: 12.8rem 0;
+  background-color: var(--primary-tint-9);
+}
+.grid--footer {
+  grid-template-columns: 1.5fr 1.5fr 1fr 1fr 1fr;
+}
+.footer-logo {
+  display: block;
+  margin-bottom: 3.2rem;
+}
+.social-links {
+  list-style: none;
+  display: flex;
+  gap: 2.4rem;
+}
+.social-icon {
+  height: 2.4rem;
+  width: 2.4rem;
+}
+.footer-heading {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 3.2rem;
+}
+.footer-nav {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+.footer-link:link,
+.footer-link:visited {
+  font-size: 1.6rem;
+  text-decoration: none;
+  color: var(--grey-7);
+  transition: all 300ms;
+}
+.footer-link:hover,
+.footer-link:active {
+  color: var(--grey-5);
+}
+.copyright {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  color: var(--grey-7);
+}
+.logo-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.contacts {
+  font-style: normal;
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+.address {
+  margin-bottom: 2.4rem;
+}
